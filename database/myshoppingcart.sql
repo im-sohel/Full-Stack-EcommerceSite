@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2018 at 10:15 AM
+-- Generation Time: Jan 21, 2018 at 05:08 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -75,6 +75,14 @@ CREATE TABLE `cart` (
   `mobileno` varchar(96) NOT NULL,
   `qty` int(96) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`pid`, `pname`, `price`, `producer`, `mobileno`, `qty`) VALUES
+(2, 'Java 2 (5th Edition)', '649', 'Herbert Schildt', '', 1),
+(1, 'Algorithms and Data Structures', '349', 'Niklaus Wirth', '', 1);
 
 -- --------------------------------------------------------
 
@@ -161,6 +169,30 @@ CREATE TABLE `product` (
   `producer` varchar(96) NOT NULL,
   `qty` varchar(96) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seller`
+--
+
+CREATE TABLE `seller` (
+  `fname` varchar(96) NOT NULL,
+  `lname` varchar(96) NOT NULL,
+  `mobile` varchar(96) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `cat` varchar(96) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `seller`
+--
+
+INSERT INTO `seller` (`fname`, `lname`, `mobile`, `email`, `cat`) VALUES
+('Sohel', 'Mollick', '8697609789', 'sohelislammollick@gmail.com', 'tshirt'),
+('Sohel', 'Mollick', '8697609789', 'sohelislammollick@gmail.com', 'books'),
+('Sohel', 'Mollick', '8697609789', 'sohelislammollick@gmail.com', 'books'),
+('Sohel', 'Mollick', '8697609789', 'sohelislammollick@gmail.com', 'books');
 
 --
 -- Indexes for dumped tables

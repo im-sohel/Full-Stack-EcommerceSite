@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <body>
 <section id="ext_menu-8">
 
@@ -102,7 +100,7 @@ session_start();
 							}
 							?>
 							<li class="nav-item nav-btn">
-							<a class="nav-link btn btn-danger" href="#">
+							<a class="nav-link btn btn-danger" href="../controller/cart.php">
 							MY CART
 							</a>
 							</li>

@@ -140,6 +140,7 @@ if(!(isset($_SESSION['login'])) && $_SESSION['login']=='')
     </nav>
 
 </section>
+<br><br>
 <?php
 
 include_once "../database/connection.php";
@@ -184,7 +185,7 @@ if($num_rows==0)
 }
 else{
 	//here 5 colums present so inner loop will run 5 times
-	echo "<br><br><br><br><br><br>";
+	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
 echo "<p align='center'><font face='verdana' size='5' color='blue'>{<i style='color:red'>".$_SESSION['login']." </i>} welcome to your Cart</font><p>";
   echo "<table align='center' border='3' cellpadding=\"30\" cellspacing='5'><br>";
   echo "<tr>

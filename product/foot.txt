@@ -5,11 +5,16 @@
             <div class="col-sm-8">
                 <div class="row">
                     <div class="col-sm-6">
-                        <p><font face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>ADDRESS</strong></span></font><br>
-BTM 2nd stage<br>Bangalore, 560068<br><br><br><font color="#7c7c7c" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>CONTACTS</strong></span></font><br>sohel islam mollick<br>Email: sohelislam14@gmail.com<br>
+                        <p><font face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong style='color:white'>ADDRESS</strong></span></font><br>
+BTM 2nd stage<br>Bangalore, 560068<br><br><br><font color="#7c7c7c" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong style='color:white'>CONTACTS</strong></span></font><br>sohel islam mollick<br>Email: sohelislammollick@gmail.com<br>
 Phone: +91 8697609789<br><br></p>
                     </div>
-                    <div class="col-sm-6"><p class="mbr-contacts__text"><br></p><ul class="mbr-contacts__list"><li>ADMIN PANEL</li><li>MAINTENANCE</li><li>DEVELOPERS</li></ul></div>
+                    <div class="col-sm-6"><p class="mbr-contacts__text"><br></p><ul class="mbr-contacts__list">
+					<li><b><a href='../admin/admin_login.html' style='color:white'>ADMIN PANEL</a></b></li>
+					<li><b><a href='../admin/admin_login.html' style='color:white'>MAINTENANCE</a></b></li>
+					<li><b><a href='../admin/developer.php' style='color:white'>DEVELOPERS</a></b></li>
+					</ul>
+					</div>
                 </div>
             </div>
             <div class="col-sm-4" data-form-type="formoid">

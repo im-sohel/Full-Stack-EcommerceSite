@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <body>
 <section id="dropdown-menu-2btn-2">
 

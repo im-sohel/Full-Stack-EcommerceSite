@@ -5,9 +5,11 @@ include_once "../database/connection.php";
 
 if(!(isset($_SESSION['login'])) && $_SESSION['login']=='')
 {
-	header("Location: ../view/client_login.php");
+	echo "<script>
+    window.location = '../view/client_login.php';
+   </script>";
 }
-
+ 
 
 $pid=$_GET['pid'];
 $price=$_GET['price'];

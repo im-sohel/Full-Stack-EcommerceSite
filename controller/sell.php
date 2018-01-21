@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(!(isset($_SESSION['login'])) && $_SESSION['login']=='')
-{
-	header("Location: ../view/client_login.php");
-}
+include_once "../database/connection.php";
+$q="INSERT INTO seller(fname,lname,mobile,email,cat) VALUES('$_POST[fname]','$_POST[lname]','$_POST[mobile]','$_POST[email]','$_POST[category]')";
+mysqli_query($con,$q) or die(mysqli_error($con));
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +25,9 @@ if(!(isset($_SESSION['login'])) && $_SESSION['login']=='')
   <link rel="stylesheet" href="../assets/mobirise/css/mbr-additional.css" type="text/css"> 
 </head>
 
-<body background="../menu/back.jpg">
+
+
+<body background='../help/im.jpg'>
 <section id="dropdown-menu-2btn-2">
 
     <nav class="navbar navbar-dropdown navbar-fixed-top">
@@ -104,8 +106,8 @@ if(!(isset($_SESSION['login'])) && $_SESSION['login']=='')
 			if(isset($_SESSION['login']) && $_SESSION['login']!=''){
 				?>
 				<li class="nav-item dropdown">
-			  <a class="nav-link link" href="../controller/myorders.php" aria-expanded="true">
-			   <span  style="color: rgb(226, 80, 65);">
+			  <a class="nav-link link" href="controller/myorders.php" aria-expanded="true">
+			   <span style="color: rgb(226, 80, 65);">
 			   </span>
 			   MY ORDERS
 			 </a>
@@ -140,74 +142,78 @@ if(!(isset($_SESSION['login'])) && $_SESSION['login']=='')
     </nav>
 
 </section>
-<?php
+<br>
 
-include_once "../database/connection.php";
+<section>
+<br><br><br><br><br><br>
+<h1 style="color:cyan" align="center">Become A Seller</h1>
+<p><font face="verdana" color="white" size="5"> You Have Successfully Applied For Business On <i style="color:red">My</i><i style='color:cyan'>Shopping</i><i style="color:red">Cart</i> . Keep Patience 
+ We Will Get Back To You Soon. Have A Nice Time. <a href='../index.php' style='color:red'>Click Here</a> To Go to Home Page!</font></p>
+<br>
+ <br><br><br><br><br><br><br><br>
 
-$m=$_SESSION['mobileno'];
+</section>
 
-$getmob="SELECT * FROM customer WHERE mobile='$m'";
-$rs=mysqli_query($con,$getmob);
-while($mob=mysqli_fetch_assoc($rs)){
- $mobileno=$mob['mobile'];
+<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="contacts1-4" style="background-color: rgb(0, 0, 0);">
+    
+    <div class="mbr-section__container container">
+        <div class="mbr-contacts mbr-contacts--wysiwyg row" style="padding-top: 45px; padding-bottom: 45px;">
+            <div class="col-sm-4">
+                <div><a href="index.php" class="mbri-chat mbr-iconfont mbr-iconfont-contacts1"></a></div>
+            </div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="mbr-contacts__text"><strong>FEEDBACKS:</strong><br>
+						<a href="../view/client_feedback.php" class="text-danger"><strong>Give</strong> <strong>Feedback</strong></a><br>
+						<a href="../help/privacy_statements.php" class="text-danger"><strong>Privacy</strong> <strong>Policy</strong></a>
+						<a href="../help/privacy_statements.php" class="text-danger"><br></a><br><a href="../help/privacy_statements.php"><br></a></p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p class="mbr-contacts__text"><strong>CONTACTS:</strong><strong><br></strong><span style='color:red'>sohel islam mollick</span><br>
+<span style='color:red'>sohelislammollick@gmail.com</span><br>
+<span style='color:red'>Phone: +91 8697609789</span><br><br></p>
+                    </div>
+                    <div class="col-sm-4">
+					<p class="mbr-contacts__text">
+					    <strong>ADMIN PANEL:</strong>
+				    </p>
+					   <ul class="mbr-contacts__list">
+					      <li>
+						     <a href="../admin/admin_login.html" class="text-danger">
+							     <strong>Admin</strong> <strong>Login</strong>
+						    </a>
+							<a class="mbr-contacts__link text-gray" href="../admin/admin_login.html">
+							</a>
+						  </li>
+						  
+						  <li>
+						    <a href="../admin/main.php" class="text-danger">
+							   <strong>Maintenance</strong>
+							</a>
+							<a class="mbr-contacts__link text-gray" href="../admin/main.php">
+							</a>
+							
+						</li>
+							
+						<li>
+							<a href="../admin/developer.php" class="text-danger"> 
+							<strong>Developers</strong>
+							</a>
+							<a class="mbr-contacts__link text-gray" href="../admin/developer.php">
+							</a>
+							</li>
+							
+							</ul>
+							</div>
+                   </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-}
 
-$query="SELECT * FROM cart WHERE mobileno='$m'";
-$result=mysqli_query($con, $query) or die(mysqli_error());
-
-
-$pid=array();
-$pname=array();
-$qty=array();
-$price=array();
-$producer=array();
-
-$j=0;
-
-$num_rows=mysqli_num_rows($result);
-while($row=mysqli_fetch_array($result))
-{
-
-$pid[$j]=$row['pid'];
-$qty[$j]=$row['qty'];
-$price[$j]=$row['price'];
-$producer[$j]=$row['producer'];
-$pname[$j]=$row['pname'];	
-$j++;
-}
-if($num_rows==0)
-{
-	echo "<br><br><br><br><br><br><br><br><br><br><br>";
-	echo "<p><font face='verdana' color='blue' size='5'><i style='color:black'>".$_SESSION['login']."</i>, You have not added any products yet. <a href='../index.php'><i style='color:red'>Click Here</i></a> to start shopping.</font></p>";
-	echo "<br><br><br><br><br><br><br><br>";
-}
-else{
-	//here 5 colums present so inner loop will run 5 times
-	echo "<br><br><br><br><br><br>";
-echo "<p align='center'><font face='verdana' size='5' color='blue'>{<i style='color:red'>".$_SESSION['login']." </i>} welcome to your Cart</font><p>";
-  echo "<table align='center' border='3' cellpadding=\"30\" cellspacing='5'><br>";
-  echo "<tr>
-           <td><span style='color:white'>---</span><b style='color: blue'>PRODUCT ID</b><span style='color:white'>---</span></td>
-		   <td><span style='color:white'>---</span><b style='color: blue'>PRODUCT NAME</b><span style='color:white'>---</span></td>
-		   <td><span style='color:white'>---</span><b style='color: blue'>PRICE</b><span style='color:white'>---</span></td>
-		   <td><span style='color:white'>---</span><b style='color: blue'>PRODUCER</b><span style='color:white'>---</span></td>
-		   <td><span style='color:white'>---</span><b style='color:blue'>BUY NOW </b>or<b style='color:red'> REMOVE</b><span style='color:white'>---</span></td>
-		   </tr>";
-        for($k=0; $k<$num_rows; $k++){
-			echo "<tr>";
-		echo "<td><span style='color:white'>---</span>".$pid[$k]."<span style='color:white'>---</span></td>";
-		echo "<td><span style='color:white'>---</span>".$pname[$k]."<span style='color:white'>---</span></td>";
-		echo "<td><span style='color:white'>---</span>".$price[$k]."<span style='color:white'>---</span></td>";
-		echo "<td><span style='color:white'>---</span>".$producer[$k]."<span style='color:white'>---</span></td>";
-		echo "<td><span style='color:white'>---</span><a href='../view/client_checkout.php?pid=$pid[$k]&pname=$pname[$k]&price=$price[$k]&producer=$producer[$k]' style='text-decoration:none; color: blue'>checkout <b>/</b></a><a href='../controller/remove_cart.php?pid=$pid[$k]' style='text-decoration:none; color:red'> remove<span style='color:white'>---</span></a></td>";
-		     echo "</tr>";
-		}
-		
-
-}
-?>
-<script src="../assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="../assets/web/assets/jquery/jquery.min.js"></script>
   <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="../assets/smooth-scroll/smooth-scroll.js"></script>
   <script src="../assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
@@ -223,4 +229,3 @@ echo "<p align='center'><font face='verdana' size='5' color='blue'>{<i style='co
   
 </body>
 </html>
-

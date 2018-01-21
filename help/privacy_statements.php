@@ -1,7 +1,7 @@
 <?php 
 include_once "../menu/head.txt";
 include_once "../menu/nav.txt";
-include_once "../product_nav.txt"; ?>
+?>
 <br><br><br><br><br>
 <article>
   <h1 style="color:green">Privacy Policy</h1>

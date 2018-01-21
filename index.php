@@ -79,7 +79,7 @@ include_once "nav.txt";
                     </div>
                 </div>
                 <div class="mbr-section__container mbr-section__container--last" style="padding-bottom: 93px;">
-                    <div class="mbr-buttons mbr-buttons--center"><a href="##" class="mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default">VISIT NOW</a></div>
+                    <div class="mbr-buttons mbr-buttons--center"><a href="product/sellonline.php" class="mbr-buttons__btn btn btn-wrap btn-xs-lg btn-default">VISIT NOW</a></div>
                 </div>
             </div>
             
@@ -127,7 +127,7 @@ include_once "nav.txt";
 
                                     <p class="mbr-hero__subtext">You can sell products through our website. Contact us we are here to help you.</p>
                                 </div>
-                                <div class="mbr-buttons btn-inverse mbr-buttons--left"><a class="mbr-buttons__btn btn btn-lg btn-danger" href="##">HAVE A LOOK</a> <a class="mbr-buttons__btn btn btn-lg btn-default" href="help/help.php">NEED HELP!</a></div>
+                                <div class="mbr-buttons btn-inverse mbr-buttons--left"><a class="mbr-buttons__btn btn btn-lg btn-danger" href="product/sellonline.php">HAVE A LOOK</a> <a class="mbr-buttons__btn btn btn-lg btn-default" href="help/help.php">NEED HELP!</a></div>
                                 </div>
                             </div>
                         </div>

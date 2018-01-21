@@ -14,9 +14,9 @@
 						<a href="help/privacy_statements.php" class="text-danger"><br></a><br><a href="help/privacy_statements.php"><br></a></p>
                     </div>
                     <div class="col-sm-4">
-                        <p class="mbr-contacts__text"><strong>CONTACTS:</strong><strong><br></strong>sohel islam mollick<br>
-sohelislammollick@gmail.com<br>
-Phone: +91 8697609789<br><br></p>
+                        <p class="mbr-contacts__text"><strong>CONTACTS:</strong><strong><br></strong><span style='color:red'>sohel islam mollick</span><br>
+<span style='color:red'>sohelislammollick@gmail.com</span><br>
+<span style='color:red'>Phone: +91 8697609789</span><br><br></p>
                     </div>
                     <div class="col-sm-4">
 					<p class="mbr-contacts__text">

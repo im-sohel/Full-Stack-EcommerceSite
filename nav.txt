@@ -16,6 +16,15 @@
             </button>
 
             <ul class="nav-dropdown collapse pull-xs-right navbar-toggleable-sm nav navbar-nav" id="exCollapsingNavbar">
+			   
+			   <li class="nav-item">
+							<a class="nav-link link" href="admin/developer.php">
+							<span style="color: rgb(184, 49, 47);">
+							</span>
+							ABOUT US
+							</a>
+							</li>
+			   
 			  <?php
 			  if(isset($_SESSION['login']) && $_SESSION['login']!='')
 			  {

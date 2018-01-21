@@ -1,0 +1,121 @@
+<?php
+session_start();
+?>
+<body>
+<section id="ext_menu-8">
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top">
+        <div class="container">
+
+            <div class="mbr-table">
+                <div class="mbr-table-cell">
+
+                    <div class="navbar-brand">
+                        <a href="../index.php" class="navbar-logo"><img src="assets/images/images1cwsmf1n-128x128.png" alt="Mobirise"></a>
+                        <a class="navbar-caption" href="../index.php">MyShoppingCart</a>
+                    </div>
+
+                </div>
+                <div class="mbr-table-cell">
+
+                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="hamburger-icon"></div>
+                    </button>
+
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+					  
+					  <?php
+					    if(isset($_SESSION['login']) && $_SESSION['login']!='')
+						{
+						?>
+					  <li class="nav-item dropdown">
+					     <a class="nav-link link dropdown-toggle" href="#" data-toggle="dropdown-submenu" aria-expanded="false">
+						   <span class="mbri-user mbr-iconfont mbr-iconfont-btn" style="color: rgb(184, 49, 47);">
+						   </span>
+						     <?php
+							   echo $_SESSION['login'];
+							   ?>
+						  </a>
+						  <div class="dropdown-menu">
+						    <a class="dropdown-item" href="../view/myaccount.php">
+							  MY ACCOUNT
+							</a>
+							<a class="dropdown-item" href="../controller/logout.php">
+							LOG OUT
+							</a>
+							</div>
+							</li>
+							<?php
+							}else{
+							?>
+							
+							<li class="nav-item dropdown">
+					     <a class="nav-link link dropdown-toggle" href="#" data-toggle="dropdown-submenu" aria-expanded="false">
+						   <span class="mbri-user mbr-iconfont mbr-iconfont-btn" style="color: rgb(184, 49, 47);">
+						   </span>
+						     MY ACCOUNT
+						  </a>
+						  <div class="dropdown-menu">
+						    <a class="dropdown-item" href="../view/register_client.php">
+							  REGISTER
+							</a>
+							<a class="dropdown-item" href="../view/client_login.php">
+							LOG IN
+							</a>
+							</div>
+							</li>
+							<?php
+							}
+							?>
+							
+							<li class="nav-item">
+							<a class="nav-link link" href="../help/help.php">
+							<span class="mbri-chat mbr-iconfont mbr-iconfont-btn" style="color: rgb(184, 49, 47);">
+							</span>
+							HELP
+							</a>
+							</li>
+							<?php
+							 if(isset($_SESSION['login']) && $_SESSION['login']!=''){
+								 ?>
+				<li class="nav-item dropdown">
+			  <a class="nav-link link" href="../controller/myorders.php" aria-expanded="true">
+			   <span  style="color: rgb(226, 80, 65);">
+			   </span>
+			   MY ORDERS
+			 </a>
+			 </li>
+             <?php
+							 }else{
+							 ?>
+							<li class="nav-item nav-btn">
+							<a class="nav-link btn btn-white btn-white-outline" href="../view/register_client.php">
+							REGISTER
+							</a>
+							</li>
+							<li class="nav-item nav-btn">
+							<a class="nav-link btn btn-white btn-white-outline" href="../view/client_login.php">
+							LOG IN
+							</a>
+							</li>
+							<?php
+							}
+							?>
+							<li class="nav-item nav-btn">
+							<a class="nav-link btn btn-danger" href="#">
+							MY CART
+							</a>
+							</li>
+							</ul>
+                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="close-icon"></div>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</section>
+<br>
